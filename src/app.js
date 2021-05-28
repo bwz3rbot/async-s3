@@ -4,23 +4,11 @@ const mime = require('mime');
 
     require('dotenv').config();
 
-    const client = require('./aws/client');
-
-    const file = await fs.readFile('test.mp4');
-    client.putObject({
-        Bucket: 'bucket-00',
-        Key: 'test.mp4',
-        Body: file,
-        ContentType: mime.getType('test.mp4')
-    }, (err, data) => {
-
-        console.log(err || data);
+    const data = await require('./aws/functions/get_object')({
+        bucketName: 'bucket-00',
+        objectKey: 'test.mp4'
     });
-
-    const objects=await require('./aws/functions/list_objects')({
-        bucketName:'bucket-00'
-    });
-    console.log(objects);
+    await fs.writeFile('output.mp4',data.Body);
 
     // client.putBucketAcl({
     //     Bucket: 'bucket-00',
