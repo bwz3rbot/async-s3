@@ -1,6 +1,8 @@
 /* Create Bucket */
 module.exports =
-    async (bucketName) => {
+    async ({
+        bucketName
+    }) => {
         return new Promise((resolve, reject) => {
             require('../client')
                 .createBucket({

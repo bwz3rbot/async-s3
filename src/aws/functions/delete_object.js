@@ -2,17 +2,13 @@
 module.exports =
     async ({
         bucketName,
-        objectKey,
-        sourceFilepath
+        objectKey
     }) => {
-        const file = await require('fs/promises').readFile(sourceFilepath);
         return new Promise((resolve, reject) => {
             require('../client')
-                .putObject({
+                .deleteObject({
                     Bucket: bucketName,
-                    Key: objectKey,
-                    Body: file,
-                    ContentType: mime.getType(sourceFilepath)
+                    Key: objectKey
                 }, (err, data) => {
                     err ? reject(err) : resolve(data);
                 });
