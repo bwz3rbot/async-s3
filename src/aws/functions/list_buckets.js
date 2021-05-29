@@ -1,11 +1,11 @@
 /* List Buckets */
+const client = require('../client');
 module.exports =
     async () => {
         return new Promise((resolve, reject) => {
-            require('../client')
-                .listBuckets(
-                    (err, data) => {
-                        err ? reject(err) : resolve(data);
-                    });
+            client.listBuckets(
+                (err, data) => {
+                    err ? reject(err) : resolve(data);
+                });
         });
     }

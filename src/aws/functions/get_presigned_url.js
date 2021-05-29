@@ -1,4 +1,5 @@
 /* Get Pre-Signed URL */
+const client = require('../client');
 module.exports =
     async ({
         bucketName,
@@ -6,7 +7,7 @@ module.exports =
         expiresIn
     }) => {
         return new Promise((resolve, reject) => {
-            require('../client').getSignedUrl('getObject', {
+            client.getSignedUrl('getObject', {
                 Bucket: bucketName,
                 Key: objectKey,
                 Expires: expiresIn || 60 * 10

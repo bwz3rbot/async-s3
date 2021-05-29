@@ -1,16 +1,16 @@
 /* Put Object */
+const client = require('../client');
 module.exports =
     async ({
         bucketName,
         objectKey
     }) => {
         return new Promise((resolve, reject) => {
-            require('../client')
-                .deleteObject({
-                    Bucket: bucketName,
-                    Key: objectKey
-                }, (err, data) => {
-                    err ? reject(err) : resolve(data);
-                });
+            client.deleteObject({
+                Bucket: bucketName,
+                Key: objectKey
+            }, (err, data) => {
+                err ? reject(err) : resolve(data);
+            });
         });
     }
