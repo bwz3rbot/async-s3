@@ -6,8 +6,7 @@ module.exports =
                 .createBucket({
                     Bucket: bucketName
                 }, (err, data) => {
-                    err ? reject(err) :
-                        resolve(data);
+                    err ? reject(err) : resolve(data);
                 });
         });
     }

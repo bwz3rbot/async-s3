@@ -7,8 +7,7 @@ module.exports =
             require('../client').listObjects({
                 Bucket: bucketName
             }, (err, data) => {
-                err ? reject(err) :
-                    resolve(data);
+                err ? reject(err) : resolve(data);
             });
         });
     }

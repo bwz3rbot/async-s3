@@ -5,8 +5,7 @@ module.exports =
             require('../client')
                 .listBuckets(
                     (err, data) => {
-                        err ? reject(err) :
-                            resolve(data);
+                        err ? reject(err) : resolve(data);
                     });
         });
     }

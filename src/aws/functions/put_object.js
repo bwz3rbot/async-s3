@@ -14,8 +14,7 @@ module.exports =
                     Body: file,
                     ContentType: mime.getType(filepath)
                 }, (err, data) => {
-                    err ? reject(err) :
-                        resolve(data);
+                    err ? reject(err) : resolve(data);
                 });
         });
     }
