@@ -1,10 +1,8 @@
 (async () => {
     require('dotenv').config();
-    const data = await require('../aws/lib').getObject({
+    const object = await require('../aws/functions/get_object')({
         bucketName: 'test-bucket-1622508445268',
         objectKey: 'test.json'
     });
-
-    await require('fs/promises').writeFile('test.json', data.Body);
-
+    console.log(Buffer.from(object.Body));
 })();

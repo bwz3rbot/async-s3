@@ -5,5 +5,6 @@ module.exports = {
     getPresignedUrl: require('./functions/get_presigned_url'),
     listBuckets: require('./functions/list_buckets'),
     listObjects: require('./functions/list_objects'),
+    putFile: require('./functions/put_file'),
     putObject: require('./functions/put_object')
 }

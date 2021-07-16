@@ -1,18 +1,20 @@
 /* Put Object */
+const mime = require('mime');
+const fs = require('fs/promises');
 const client = require('../config/client');
 module.exports =
     async ({
         bucketName,
         objectKey,
-        object,
-        contentType
+        sourceFilepath
     }) => {
+        const file = await fs.readFile(sourceFilepath);
         return new Promise((resolve, reject) => {
             client.putObject({
                 Bucket: bucketName,
                 Key: objectKey,
-                Body: object,
-                ContentType: contentType
+                Body: file,
+                ContentType: mime.getType(sourceFilepath)
             }, (err, data) => {
                 err ? reject(err) : resolve(data);
             });
