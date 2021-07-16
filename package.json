@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "url":"https://github.com/bwz3rbot/async-s3.git"
+  },
   "dependencies": {
     "aws-sdk": "^2.918.0",
     "dotenv": "^10.0.0",
