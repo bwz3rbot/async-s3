@@ -4,6 +4,13 @@ Async S3 is an asynchronous API wrapper for the callback based Filebase Storage 
 
 Using is simple.
 
+Create a .env file:
+```javascript
+AWS_ACCESS_KEY_ID='*****'
+AWS_SECRET_ACCESS_KEY='*****'
+```
+
+Call Functions in your code:
 ```javascript
 /* Configure the client with API key and secret using .env file */
 require('dotenv').config();
