@@ -1,7 +1,7 @@
 /* Put Object */
 const mime = require('mime');
 const fs = require('fs/promises');
-const client = require('../client');
+const client = require('../config/client');
 module.exports =
     async ({
         bucketName,

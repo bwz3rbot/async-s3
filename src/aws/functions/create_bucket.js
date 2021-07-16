@@ -1,5 +1,5 @@
 /* Create Bucket */
-const client = require('../client');
+const client = require('../config/client');
 module.exports =
     async ({
         bucketName

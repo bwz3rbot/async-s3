@@ -1,5 +1,5 @@
 /* Get Pre-Signed URL */
-const client = require('../client');
+const client = require('../config/client');
 module.exports =
     async ({
         bucketName,

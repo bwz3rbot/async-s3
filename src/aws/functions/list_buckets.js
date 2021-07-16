@@ -1,5 +1,5 @@
 /* List Buckets */
-const client = require('../client');
+const client = require('../config/client');
 module.exports =
     async () => {
         return new Promise((resolve, reject) => {
